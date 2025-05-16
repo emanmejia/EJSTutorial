@@ -25,5 +25,26 @@ app.get('/', (request, response) => {
 app.get('/services', (request, response) => {
     //Data
     const name = "Amy";
-    response.render("services", {name: name});
-});
+    const data = {
+        years: 5,
+        services: [
+            {
+                name: "Consulting",
+                desc: "State of the art consulting services"
+            },
+            {
+                name: "Education",
+                desc: "Educate your work force"
+            },
+            {
+                name: "Security",
+                desc: "Secure your network"
+            }
+        ]
+    };
+    response.render("services",
+        {
+            name: name,
+            data: data
+        });
+}); 
